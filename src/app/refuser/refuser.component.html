@@ -1,0 +1,47 @@
+
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxFlex fxLayout="row">
+    <span class="title-center"> Would U  Like To Write An Explain About Declining A Job request ?</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="Mat-tapography">
+  <form [formGroup]="refusform">
+    <div fxFlex fxLayout="column">
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="to" required />
+        
+        <mat-error
+        *ngIf="
+          refusform.controls.to.touched &&
+          refusform.controls.to.invalid
+        "
+      >
+        <span *ngIf="refusform.controls.to.errors.required">
+          Empty</span
+        >
+        <span *ngIf="refusform.controls.to.errors.pattern">
+          wrong
+        </span>
+      </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Text  </mat-label>
+        <textarea matInput formControlName="text" ></textarea>
+
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+
+  <button (click)="handlesubmit()" [disabled]="!(refusform.dirty&&refusform.valid)" mat-raised-button style="background-color:rgb(238, 252, 255)">
+ Send Explination
+  </button>
+  <button mat-raised-button mat-dialog-close style="background-color: rgba(154, 255, 171, 0.514);">
+    close
+
+  </button>
+
+</mat-dialog-actions>

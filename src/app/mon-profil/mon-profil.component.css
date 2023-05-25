@@ -1,0 +1,25 @@
+.mat-toolbar{
+  margin:-24px;
+width: auto;
+margin-bottom: 6%;
+}
+
+.title-center{
+text-align:center;
+flex:auto
+}
+.tools{
+  background-color: #9f41f7;
+}
+input#input-photo{
+  display :none;
+}
+input#input-photo+label{
+  background-color: #9f41f7;
+  color: white;
+  padding: 8px;
+  border: solid 2px #e9e6e6;
+
+
+ width: 460px;
+}

@@ -1,0 +1,131 @@
+body{
+  background:#F8F8FF;
+  margin-top:20px;
+}
+/********************
+  EMPLOYERS LIST
+*********************/
+.employers-list-bg {
+padding: 180px 0px 80px 0px;
+background-size: cover;
+position: relative;
+background-position: center center;
+}
+
+.employers-list-img img {
+max-width: 80px;
+-webkit-box-shadow: 0 0 5px 0px #d7d7d7;
+        box-shadow: 0 0 5px 0px #d7d7d7;
+}
+
+.employers-icons li {
+margin: 0px !important;
+}
+
+/********************
+ EMPLOYERS DETAILS
+*********************/
+.employers-details-bg {
+padding: 180px 0px 80px 0px;
+
+background-size: cover;
+position: relative;
+background-position: center center;
+}
+
+.employers-details {
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid #eeeeee;
+}
+
+.employers-share-job li a {
+height: 40px;
+width: 40px;
+color: #777777;
+text-align: center;
+font-size: 19px;
+display: inline-block;
+line-height: 38px;
+border-radius: 4px;
+border: 1px solid #dddddd;
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+margin: 6px 0;
+transition: all 0.5s;
+}
+
+.employers-share-job li a:hover {
+background-color: #ff4f6c;
+color: #ffffff;
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+border-color: #ff4f6c;
+-webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+-webkit-box-shadow: 0 3px 20px -8px #000000;
+        box-shadow: 0 3px 20px -8px #000000;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+.m-14 {
+  margin: 14px 0px;
+}
+}
+
+@media (max-width: 425px) {
+.employers-details-time h6 {
+  text-align: center !important;
+}
+.employers-details-item-border {
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
+}
+}
+
+.list-grid-item {
+border: 1px solid #ececec;
+border-radius: 6px;
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+}
+
+.list-grid-item:hover {
+-webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+        box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+border-color: transparent;
+}
+
+.left-sidebar .card-body {
+  border-bottom: 1px solid #ececec;
+}
+
+.custom-control {
+  margin: 11px 20px;
+}
+
+.card-header {
+  background-color: transparent;
+  margin-bottom: 0 !important;
+}
+
+.pagination.job-pagination .page-link {
+border-radius: 50% !important;
+margin: 0 4px;
+height: 46px;
+width: 45px;
+line-height: 29px;
+text-align: center;
+color: #777777;
+}
+
+.page-item.active .page-link {
+background-color: #ff4f6c;
+border-color: #ff4f6c;
+color: #ffffff !important;
+}
+
+.f-14 {
+  font-size: 14px;
+}

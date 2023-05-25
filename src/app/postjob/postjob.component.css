@@ -1,0 +1,31 @@
+.mat-toolbar{
+  margin: -24px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.tool{
+  background-color: #9f41f7;
+
+}
+.title-center{
+text-align: center;
+color:rgb(241, 240, 240) ;
+flex:auto ;
+}
+.mat-form-field{
+padding:5px ;
+}
+input#input-photo{
+  display :none;
+}
+input#input-photo+label{
+  margin-left: 0px;
+  background-color: #9f41f7;
+  color: white;
+  padding: 8px;
+  border: solid 2px #e9e6e6;
+
+ width: 460px;
+}
+

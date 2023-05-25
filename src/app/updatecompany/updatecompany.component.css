@@ -1,0 +1,26 @@
+.tools{
+  margin:-24px ;
+width: auto;
+  margin-bottom: 5%;
+
+}
+input#input-file{
+  display :none;
+}
+.title-center{
+  text-align: center;
+  flex: 1 1 auto;
+}
+.mat-toolbar{
+  background-color:  #9f41f7 ;
+}
+input#input-file+label{
+  margin-left: 0px;
+  background-color: #9f41f7;
+  color: white;
+  padding: 8px;
+  border: solid 2px #e9e6e6;
+
+ width: 460px;
+}
+

@@ -1,0 +1,94 @@
+<app-navbar1></app-navbar1>
+<app-navbar2></app-navbar2>
+<div *ngFor="let c of data" >
+<div class="container"  [hidden]="c.usertype=='candidat'">
+  <!-- Table -->
+  <h2  style="color: rgb(52, 54, 53);"> <b>Welcome To Dashbord</b></h2>
+  <div class="table-wrapper">
+      <table class="fl-table">
+          <thead>
+          <tr>
+            <th><b>Job Id</b></th>
+              <th><b>Job Title </b></th>
+              <th><b>Company Name </b></th>
+              <th><b> Poste Date</b></th>
+              <th><b>Expire Date</b></th>
+
+              <th><b> Status</b></th>
+              <th style="width: 140px;"><b>Applications</b></th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let j of prepostjob">
+          <tr>
+            <td ><b>#{{j.jobid}}</b></td>
+              <td><b>{{j.jobtitle}}</b></td>
+              <td><b>{{j.companyname}}</b></td>
+              <td><b>{{j.dateposte}}</b></td>
+              <td><b>{{j.closingdate}}</b></td>
+
+              <td *ngIf="j.status=='pending'"><span class="badge badge-warning"><b style="font-size: 15px;">{{j.status}}</b></span></td>
+              <td *ngIf="j.status=='published'"><span class="badge badge-success" ><b style="font-size: 15px;">{{j.status}}</b></span></td>
+              <td *ngIf="j.status=='refused'"><span class="badge badge-danger"><b style="font-size: 15px;">{{j.status}}</b></span></td>
+              <td style="width: 140px;">
+                <button  style="background-color:rgb(42, 118, 233); width: 100px;margin-left: 3px;"><a  href="ManageCandidats/{{j.jobid}}" style=" color:white;width: 100px; "> Show()</a></button>
+                <Button (click)="deletejobpre(j.jobid)"style="background-color:red; width: 100px;margin-left: 3px;"><i class="fa-solid fa-calendar-xmark"></i>  Delete </Button>
+
+              </td>
+          </tr>
+
+          <tbody>
+      </table>
+  </div>
+
+    <br />
+    <a  style="background-color: #9f41f7;"(click)="postjobaction()" class="button">Add Job</a>
+  </div>
+</div>
+
+
+<div *ngFor="let v of data">
+  <div class="container" [hidden]="v.usertype=='company'">
+    <!-- Table -->
+    <h2  style="color: rgb(52, 54, 53);"> <b>Here U Find Your Postulated Jobs</b></h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+
+                <th><b>Job Title </b></th>
+                <th><b>Company Name </b></th>
+                <th><b> Poste Date</b></th>
+                <th><b>Expire Date</b></th>
+
+                <th><b> Status</b></th>
+
+            </tr>
+            </thead>
+            <tbody *ngFor="let j of hobs">
+            <tr>
+                <td><b>{{j.jobtitle}}</b></td>
+                <td><b>{{j.companyname}}</b></td>
+                <td><b>{{j.dateposte}}</b></td>
+                <td><b>{{j.closingdate}}</b></td>
+
+                <td *ngIf="j.status=='pending'"><span class="badge badge-warning"><b style="font-size: 15px;">{{j.status}}</b></span></td>
+                <td *ngIf="j.status=='preselected'"><span class="badge badge-success" ><b style="font-size: 15px;">{{j.status}}</b></span></td>
+                <td *ngIf="j.status=='refused'"><span class="badge badge-danger"><b style="font-size: 15px;">{{j.status}}</b></span></td>
+                <td style="width: 140px;">
+
+
+          </td>
+            </tr>
+
+            <tbody>
+        </table>
+    </div>
+
+      <br />
+
+    </div>
+  </div>
+
+
+
+

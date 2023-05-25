@@ -1,0 +1,48 @@
+<app-navbar1></app-navbar1>
+<app-navbar2></app-navbar2>
+
+
+
+                            <div class="col-sm-4" style="margin-left:30%">
+                                <div class="search-box">
+
+                                    <input  [(ngModel)]="jobpre" class="form-control" placeholder="Search Candidats">
+                                </div>
+                            </div>
+
+
+
+      <div class="col-lg-18" >
+          <div class="row" >
+              <div class="col-lg-4 col-md-6" *ngFor="let c of prepostjob|filter:jobpre">
+                  <div class="list-grid-item mt-4" >
+                      <div class="grid-item-content p-2" >
+                          <div class="employers-list-img mt-3">
+                              <img src={{c.photourl}} alt="" class="img-fluid mx-auto d-block rounded-circle">
+                          </div>
+                          <div class="grid-list-desc text-center mt-4">
+                              <h5 class="mb-1"><a href="#" class="text-dark">{{c.username}}</a></h5>
+                              <p class="text-muted f-14 mb-0">{{c.titreprofessionelle}}</p>
+                              <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>{{c.location}}</p>
+                              <span *ngIf="c.status=='preselected'"class="badge badge-success">{{c.status}}</span>
+                              <span *ngIf="c.status=='pending'"class="badge badge-warning">{{c.status}}</span>
+                              <span *ngIf="c.status=='refused'"class="badge badge-danger">{{c.status}}</span>
+                          </div>
+                      </div>
+                      <hr class="mt-0 mb-0">
+                      <div class="apply-button text-center mt-2 mb-2">
+                          <a href="candidat/{{c.id_user}}" class="btn btn-custom btn-sm"style="background-color:rgb(47, 137, 255);">View Profile</a>
+                          <a (click)="accept(c.jobid,c.id_user,this.data)" class="btn btn-custom btn-sm" style="background-color:greenyellow"><i  style="margin-right: 1px;" class="fa-solid fa-check"></i>Accept</a>
+                          <a (click)="refus(c.jobid,c.id_user,this.data)"class="btn btn-custom btn-sm" style="background-color:rgb(252, 67, 21)"><i style="margin-right: 2px;" class="fa-solid fa-xmark"></i>Refuse</a>
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+          </div>
+      </div>
+
+

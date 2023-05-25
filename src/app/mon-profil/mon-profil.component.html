@@ -1,0 +1,30 @@
+<mat-toolbar class="tools" >
+  <mat-toolbar-row fxLayout="row" fxFlex>
+    <h1 class="title-center" > Update Photo</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="Mat-tapography">
+  <form    [formGroup]="updatephotoform">
+    <div fxFlex fxLayout="column" >
+      <input id="input-photo"  (change)="onFileSelect($event)" accept="image/jpeg" formControlName="photourl" required  type="file"   />
+      <label  for="input-photo">   <i class="fa-solid fa-upload"></i> Choose an Image(.jpg*) :&nbsp;{{filenamephoto}}</label>
+
+
+    </div>
+  </form>
+  </mat-dialog-content>
+
+
+
+<mat-dialog-actions align="center">
+  <button id="titlebar"
+    mat-raised-button
+   
+  style="color:  rgb(0, 0, 0);margin-top: -3px; background-color:  #f6ebff;" 
+   (click)="handlepost()"
+   [disabled]="!(updatephotoform.valid && updatephotoform.dirty)"
+  >
+  update photo
+</button>
+  <a mat-raised-button mat-dialog-close   style="color:  rgba(255, 0, 0, 0.904)" > Close</a>
+</mat-dialog-actions>

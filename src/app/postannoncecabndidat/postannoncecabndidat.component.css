@@ -1,0 +1,57 @@
+
+
+.mat-toolbar{
+  margin: -24px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.tool{
+  background-color: #9f41f7;
+
+}
+.title-center{
+text-align: center;
+color:rgb(27, 26, 26) ;
+flex:auto ;
+}
+.mat-form-field{
+padding:0px ;
+margin: 0;
+}
+input#input-file{
+  display :none;
+}
+input#input-file+label{
+  margin-left: 0px;
+  background-color: #9f41f7;
+  color: white;
+  padding: 8px;
+  border: solid 2px #e9e6e6;
+
+ width: 460px;
+}
+input#input-file+label :hover{
+  background-color: #9f41f7;;
+
+  box-shadow: #40fc50;
+ cursor: pointer  ;
+}
+input#input-photo{
+  display :none;
+}
+input#input-photo+label{
+  background-color: #9f41f7;
+  color: white;
+  padding: 8px;
+  border: solid 2px #e9e6e6;
+
+
+ width: 460px;
+}
+input#input-photo+label :hover{
+  border: solid 2px #e9e6e6;
+
+ cursor: pointer  ;
+}
+

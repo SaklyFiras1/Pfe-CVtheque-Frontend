@@ -1,0 +1,55 @@
+<app-navbar1></app-navbar1>
+<div id="titlebar" class="single">
+  <div class="container">
+    <div class="sixteen columns">
+      <h2>Contact</h2>
+      <nav id="breadcrumbs">
+        <ul>
+          <li>You are here:</li>
+          <li><a href="#">Home</a></li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="eleven columns">
+   
+        <form  [formGroup]="contactform">
+        
+          <div>
+            <label>Your Email: <span></span></label>
+            <input
+            formControlName="email"
+
+              type="email"
+
+              
+              pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$"
+required
+              />
+            
+          </div>
+        <br>
+        <br>
+          <div>
+            <label>Text</label>
+            <textarea formControlName="subject" type="text" required ></textarea >
+          </div>
+
+          
+        
+      
+        <button type="submit" mat-raised-button id="titlebar" style="background-color: #e8dff1 ;color:black"  [disabled]="!(contactform.valid&&contactform.dirty)" (click)="handlecontact()" >Send Message </button>
+        <div class="clearfix"></div>
+      </form>
+        <div class="margin-bottom-40"></div>
+     
+  
+  </div>
+
+<div class="margin-top-60"></div>
+
+
+

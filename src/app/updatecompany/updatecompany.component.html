@@ -1,0 +1,56 @@
+<mat-toolbar class="tools" >
+  <mat-toolbar-row fxLayout="row" fxFlex>
+    <h1 class="title-center" > Update Profil company </h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="Mat-tapography">
+  <form    [formGroup]="updateform">
+    <div fxFlex fxLayout="column" *ngFor="let c of userprofil" >
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>companyurl </mat-label>
+        <input matInput   formControlName="companyurl" [(ngModel)]="c.companyurl" required  />
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Adress</mat-label>
+        <input matInput   formControlName="location" required [(ngModel)]="c.location" />
+
+      </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label>Phone </mat-label>
+      <input matInput  formControlName="numerodetelephone"[(ngModel)]="c.numerodetelephone"  required  />
+
+    </mat-form-field>
+
+  <mat-form-field appearance="fill" fxFlex>
+    <mat-label> username</mat-label>
+    <input matInput  formControlName="username" [(ngModel)]="c.username"  required>
+
+  </mat-form-field>
+
+
+
+    </div>
+  </form>
+  </mat-dialog-content>
+
+
+
+<mat-dialog-actions align="center">
+  <a
+    mat-raised-button
+    type="submit"
+
+
+   (click)="handlepost()"
+   [disabled]="!(updateform.valid)"
+
+  >
+   Update company Profil
+</a>
+  <a mat-raised-button mat-dialog-close   style="color:  rgb(255, 0, 0)" > Close</a>
+</mat-dialog-actions>

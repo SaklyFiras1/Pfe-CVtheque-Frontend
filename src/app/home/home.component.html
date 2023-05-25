@@ -1,0 +1,77 @@
+<app-navbar1></app-navbar1>
+
+
+<div id="banner" style="background: url(https://cdn.pixabay.com/photo/2017/11/19/10/40/business-2962348_960_720.jpg)">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="search-container">
+        <!-- Form -->
+        <h2>Search A Job</h2>
+        <input
+          type="text"
+          [(ngModel)]="jobs"
+           placeholder="Search A Job"
+
+        />
+
+      </div>
+    </div>
+  </div>
+</div>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+  integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY="
+  crossorigin="anonymous"
+/>
+
+
+<div class="row">
+  <div class="col-lg-10 mx-auto">
+    <div class="career-search mb-60">
+      <div class="filter-result"  *ngFor="let job of listjob|filter:jobs">
+        <div *ngIf="job.status=='published'"
+
+          class="job-box d-md-flex align-items-center justify-content-between mb-30"
+        >
+
+          <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+            <div
+              class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
+            >
+            <img src={{job.logourl}}>
+            </div>
+            <div class="job-content ">
+              <h1 class="text-center text-md-left">{{job.jobtitle +'('+job.jobcategorie+')'}}  <span *ngIf="job.jobtype=='Full_Time'"  style="height: 2px;font-size:medium;padding: 6px;border-radius: 5px;margin-top: 16px;"class="full-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='Part_Time'"  style="height: 2px;font-size:medium;padding: 6px;border-radius: 5px;margin-top: 16px;" class="part-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='internship'"  style="height: 2px;font-size:medium;padding: 6px;border-radius: 5px;margin-top: 16px;" class="internship">{{job. jobtype}}</span><span *ngIf="job.jobtype=='freelance'"  style="height: 2px;font-size:medium;padding: 6px;border-radius: 5px;margin-top: 16px;" class="freelance">{{job. jobtype}}</span><span *ngIf="job.jobtype=='temporary'"  style="height: 2px;font-size:medium;padding: 6px;border-radius: 5px;margin-top: 16px;" class="temporary">{{job. jobtype}}</span></h1>
+              <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                <li class="mr-md-4">
+                  <i style="color: black;"class="zmdi zmdi-pin mr-2"></i> {{job.gouvernement}}
+                </li>
+                <li class="mr-md-4">
+                  <i   style="color:rgb(82, 114, 78)"  class="fa fa-money"></i> {{job.salary }}
+                </li>
+                <li class="mr-md-4">
+                  <i   style="color:rgb(82, 114, 78)"  class="fa fa-building"></i> {{job.companyname }}
+                </li>
+                <li class="mr-md-4">
+                  <i  style="color:rgb(0, 0, 0);font-size: 23px;"  class="zmdi zmdi-time mr-2"></i>Date Of Poste :{{job.dateposte}}
+                </li>
+                <li class="mr-md-4">
+                  <i  style="color:rgb(83, 83, 83);font-size: 23px;"  class="zmdi zmdi-time mr-2"></i> Expire Date:{{job.closingdate}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="job-right my-4 flex-shrink-0">
+            <a href="/profilstaticjob/{{job.jobid}}" class="btn d-block w-100 d-sm-inline-block btn-light"
+              >View Offer</a
+            >
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+</div>
+            <div class="margin-top-60"></div>
+

@@ -1,0 +1,251 @@
+
+<div id="wrapper">
+
+
+  <div class="overlay"></div>
+
+       <!-- Sidebar -->
+   <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+      <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <a ><img   src="assets/images/logo.png"></a></div></div>
+      <li><a (click)="logoutaction()"><i class="fas fa-sign-out-alt"></i>Deconnexion</a></li>
+
+
+     <li><a   (click)="changepasswordaction()">Change Password </a></li>
+     <li><a (click)="refuseraction()">Contact</a></li>
+
+     </ul>
+ </nav>
+
+
+       <div id="page-content-wrapper" >
+           <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+               <span class="hamb-top"></span>
+         <span class="hamb-middle"></span>
+       <span class="hamb-bottom"></span>
+           </button>
+
+           <div class="container-xl">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+
+
+
+
+
+
+                       <div class="col-sm-8"><h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: xxx-large;margin-left: 53%;margin-top: -20px;">  Workscout Manager </h2> <br> <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: x-large;margin-left: 2%;margin-top: -18px;">  <b>J</b>O<b>B</b>S  ANNONCES</h2>    </div>
+                            <div class="col-sm-4">
+                                <div class="search-box">
+                                    <i class="material-icons">&#xE8B6;</i>
+                                    <input  [(ngModel)]="jobpre" class="form-control" placeholder="Search&hellip;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th><b>Jobid</b></th>
+                                <th> <b>Userid</b></th>
+                                <td><b>Company Name</b></td>
+                                <th><b>Jobtitle</b></th>
+                                <th><b>CompanyEmail</b></th>
+
+                                <th><b>Poste Date</b></th>
+                                <th><b>Expire Date</b></th>
+                                <th><b>Status</b></th>
+                                <th><b>Actions</b></th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let c of prepostjob|filter :jobpre " >
+                                <td>{{c.jobid}}</td>
+                                <td>{{c.iduser}}</td>
+                                <td>{{c.companyname}}</td>
+                                <td>{{c.jobtitle}}</td>
+                                <td>{{c.companyemail}}</td>
+
+                                <td>{{c.dateposte}}</td>
+                                <td>{{c.closingdate}}</td>
+
+                                <td *ngIf="c.status=='pending'  "><span class="badge badge-warning" style="width: 60px; justify-content: center;margin-left: 19%;">{{c.status}}</span></td>
+
+
+                                <td *ngIf="c.status=='published'  "><span class="badge badge-success" style="width: 60px; justify-content: center;margin-left: 19%;">{{c.status}}</span></td>
+                                <td *ngIf="c.status=='refused'  "><span class="badge badge-danger" style="width: 60px; justify-content: center;margin-left: 19%;">{{c.status}}</span></td>
+                                <td>
+                                    <a  href="/prepostjob/{{c.jobid}}" class="show" title="show" ><i class="fa-solid fa-eye"></i></a>
+                                    <a  class="accepter"  (click)="postjobreq(c.jobid,this.data)" title="accepter" ><i class="fa-regular fa-circle-check"></i></a>
+                                    <a  class="refuser" (click)="refus(c.jobid,data)"title="refuser"><i class="fa-solid fa-circle-xmark"></i></a>
+                                    <a  class="delete"  (click)="deletejobpre(c.jobid)" title="Delete" ><i class="fa-solid fa-calendar-xmark"></i> </a>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+       </div>
+       <!-- /#page-content-wrapper -->
+
+
+   </div>
+
+   <div id="page-content-wrapper" >
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+  <span class="hamb-middle"></span>
+<span class="hamb-bottom"></span>
+    </button>
+
+    <div class="container-xl">
+     <div class="table-responsive">
+         <div class="table-wrapper">
+             <div class="table-title">
+                 <div class="row">
+                <div class="col-sm-8"><h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: x-large;margin-left: 2%;margin-top: -18px;">  <b>C</b>A<b>N</b>D<b>I</b>D<b>A</b>T<b>S</b> ANNONCES</h2>   </div>
+                     <div class="col-sm-4">
+                         <div class="search-box">
+                             <i class="material-icons">&#xE8B6;</i>
+                             <input  [(ngModel)]="jobp" class="form-control" placeholder="Search&hellip;">
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <table class="table table-striped table-hover table-bordered">
+                 <thead>
+                     <tr>
+                         <th><b>UserId</b></th>
+                         <th> <b>Username</b></th>
+                         <th><b>CandidatEmail</b></th>
+                         <th><b>Poste Date</b></th>
+                         <th><b>Expire Date</b></th>
+                         <th><b>Actions</b></th>
+                     </tr>
+                 </thead>
+                 <tbody >
+                     <tr  *ngFor="let j of candidat|filter:jobp" >
+
+                         <td>#{{j.id_post}}</td>
+
+                         <td>{{j.username}}</td>
+                            <td>{{j.email}}</td>
+                         <td>{{j.dateposte}} </td>
+                         <td>{{j.expiredate}}</td>
+
+
+
+
+                         <td>
+
+                             <a  class="delete" (click)="deletecandidatannonce(j.id_post)"   title="Delete" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-calendar-xmark"></i> </a>
+                         </td>
+                     </tr>
+
+
+
+
+                 </tbody>
+             </table>
+
+
+             </div>
+         </div>
+
+     </div>
+
+</div>
+
+<div id="page-content-wrapper" >
+  <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+<span class="hamb-middle"></span>
+<span class="hamb-bottom"></span>
+  </button>
+
+  <div class="container-xl">
+   <div class="table-responsive">
+       <div class="table-wrapper">
+           <div class="table-title">
+               <div class="row">
+              <div class="col-sm-8"><h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: x-large;margin-left: 2%;margin-top: -18px;">  <b>W</b>O<b>R</b>K<b>S</b>C<b>O</b>U<b>T</b>&nbsp;CANDIDATS </h2>   </div>
+                   <div class="col-sm-4">
+                       <div class="search-box">
+                           <i class="material-icons">&#xE8B6;</i>
+                           <input  [(ngModel)]="jok" class="form-control" placeholder="Search&hellip;">
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <table class="table table-striped table-hover table-bordered">
+               <thead>
+                   <tr>
+                       <th><b>CandidatId</b></th>
+                       <th> <b>Username</b></th>
+                       <th><b>CandidatEmail</b></th>
+                       <th><b>RegisterDate</b></th>
+                       <th> <b>Badge Status</b></th>
+                       <th><b>Actions</b></th>
+                   </tr>
+               </thead>
+               <tbody >
+                   <tr  *ngFor="let j of wcandidat|filter :jok" >
+
+                       <td>#{{j.id_user}}</td>
+
+                       <td>{{j.username}}</td>
+                          <td>{{j.email}}</td>
+                          <td>{{j.registerdate}}</td>
+                          <td *ngIf="j.badge=='pending'  "><span class="badge badge-warning" style="width: 60px; justify-content: center;margin-left: 19%;">{{j.badge}}</span></td>
+                          <td *ngIf="j.badge=='Approved'  "><span class="badge badge" style="width: 60px; justify-content: center;margin-left: 19%;background-color: #5a4af1; color: white;" >{{j.badge}}</span></td>
+                          <td *ngIf="j.badge=='Expert'  "><span class="badge badge-warning" style="width: 60px; justify-content: center;margin-left: 19%;background-color: #fffb1d; color: rgb(0, 0, 0);">{{j.badge}}</span></td>
+
+
+
+
+                       <td>
+
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <a   href="Candidatsbadge/{{j.id_user}}"class="show" title="show" ><i class="fa-solid fa-eye"></i></a>
+                           <a  class="Approved"   (click)="approvecandidat(j.id_user)" title="Approved" >  <i class="fa-solid fa-id-badge"></i></a>
+                           <a  class="Expert"  (click)="Expertcandidat(j.id_user)"   title="Expert" >  <i class="fa-solid fa-id-badge"></i></a>
+                       </td>
+                   </tr>
+
+
+
+
+               </tbody>
+           </table>
+
+
+           </div>
+       </div>
+
+   </div>
+
+</div>
+<!-- /#page-content-wrapper -->
+
+
+
+
+<!-- /#wrapper -->
+
+
+   <!-- /#wrapper -->

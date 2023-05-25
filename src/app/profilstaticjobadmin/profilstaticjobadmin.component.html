@@ -1,0 +1,133 @@
+
+<div *ngFor="let job of prepostjo">
+<div id="titlebar" style="height: 100px;">
+	<div class="container">
+		<div class="row">
+
+			<h2 class="row">{{job.companyname}}({{job.jobtitle}})<span *ngIf="job.jobtype=='Full_Time'"  style="height: 36px;padding: 6px;margin-top:5px ;width: 82px;"class="full-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='Part_Time'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="part-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='internship'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="internship">{{job. jobtype}}</span><span *ngIf="job.jobtype=='freelance'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="freelance">{{job. jobtype}}</span><span *ngIf="job.jobtype=='temporary'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="temporary">{{job. jobtype}}</span><p  class="row"style="margin-left:28px ;transform: translateY(-7px);"><b> <i style="font-size: 42px;color:rgb(102, 207, 40);" class="fa-solid fa-door-open"></i></b> <p>{{job.nombrepostes}}&nbsp;Open Posts</p>
+
+      </h2>
+		</div>
+
+
+
+	</div>
+</div>
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+
+	<!-- Recent Jobs -->
+	<div class="eleven columns">
+	<div class="padding-right">
+
+		<!-- Company Info -->
+
+		<div class="company-info" >
+			<img src="{{job.logourl}}" >
+			<div class="content">
+				<h4 style="font-size: 16px;"><b>{{job.companyname}}</b></h4>
+				<span><a ><i class="fa fa-link"></i> {{job.companyurl}}</a></span>
+
+				<span><a><i class="fa fa-phone"></i> {{job.phone}}</a></span>
+
+				<span><a ><i class="fa fa-exclamation-circle"></i> {{job.companyemail}}</a></span>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+    <h4 style="font-size: 18px;"> <b>Job Description</b></h4>
+		<p class="margin-reset" style="font-size: 14px;">
+
+			{{job.Descriptionj}}
+		</p>
+
+		<br>
+
+
+		<br>
+
+		<h4 class="margin-bottom-10"  style="font-size: 18px;"> <b>Job Requirment</b></h4>
+
+		<ul class="list-1">
+			<p style="font-size:14px">{{job.jobrequirement}}</p>
+
+		</ul>
+<div style="margin-top: -190px;"></div>
+	</div>
+	</div>
+		<div class="float-right " style="margin-top: -300px;width:300px">
+
+
+			<div class="job-overview" style="margin-left:80px;margin-right:-80px;background-color: #ffffff;transform: translateY(25%);">
+
+				<ul>
+          <li>
+            <h4 style="margin-left: 58px; font-size: large;"><b >Overview</b></h4></li>
+					<li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-map-marker"> </i>
+						<div>
+              <span>
+							<strong>Location:</strong>
+						{{job.gouvernement}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8) "class="fa fa-user"></i>
+						<div>
+              <span>
+							<strong>Job Title:</strong>
+						{{job.jobtitle}}</span>
+						</div>
+					</li>
+          <li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-map-marker"> </i>
+						<div>
+              <span>
+							<strong>Job Categorie:</strong>
+							{{job.jobcategorie}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-clock-o"></i>
+						<div>
+              <span>
+							<strong>Hours:</strong>
+						{{job.hours}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8)"  class="fa fa-money"></i>
+						<div>
+              <span>
+							<strong>Salary</strong>
+							{{job.salary}}</span>
+
+
+						</div>
+
+					</li>
+				</ul>
+
+
+
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+	<!-- Widgets / End -->
+
+</div>
+
+    <div class="margin-top-60"></div>
+
+
+
+
+

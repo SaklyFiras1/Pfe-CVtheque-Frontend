@@ -1,0 +1,59 @@
+<app-navbar1></app-navbar1>
+
+<div style="margin-top: 45px;"></div>
+
+<div class="container">
+    <div class="row justify-content-center" *ngFor="let c of userprofil" >
+        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn" >
+            <div class="card border-0 shadow" style="background-color: rgb(221, 221, 221);">
+                <img   class="circle"src={{c.photourl}}  style="width: 260px; margin:29px 29px -12px 40px;border-radius: 40px;">
+                <div class="card-body p-1-9 p-xl-5">
+
+                    <ul class="list-unstyled mb-4">
+                      <li class="mb-3"><a ><i  class="fa-solid fa-user-large display-25 me-3 text-secondary" style="color:transparent;"></i> &nbsp;{{c.username}}</a></li>
+
+                      <li class="mb-3"><a ><i class="fa-solid fa-magnifying-glass display-25 me-3 text-secondary"></i>&nbsp;{{c.recherchedpost}}</a></li>
+                        <li class="mb-3"><a><i class="far fa-envelope display-25 me-3 text-secondary"></i>&nbsp;{{c.email}}</a></li>
+
+                        <li class="mb-3"><a ><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>&nbsp;{{c.phone}}</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="ps-lg-1-6 ps-xl-5">
+              <div class="mb-5 wow fadeIn">
+                <div class="text-start mb-1-6 wow fadeIn">
+                  <br>
+                  <br>
+                    <h2 class="mb-0 ">*Curriculum Vitae</h2>
+                    <br>
+                    <a href={{c.pdfcv}}><i  style="color: red;font-size: 150px;"class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
+
+                </div>
+                </div>
+                <div class="mb-5 wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="h1 mb-0 "> *Description</h2>
+                    </div>
+                    <p>{{c.description}} </p>
+
+                </div>
+
+                  <div class="mb-5 wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="mb-0 "> *Job Dependency</h2>
+                    </div>
+                  <p style="font-size: larger;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; "> <i style="color:#0bd32c"  class="fa-solid fa-dollar-sign"></i>&nbsp;Salary &nbsp;: {{c.salary}} &nbsp;&nbsp;&nbsp;<i style="color:#0bd32c" class="fa-solid fa-clock"></i>&nbsp;Hours &nbsp;: {{c.hours}} &nbsp;&nbsp;<i style="color:#0bd32c" class="fa-solid fa-location-dot"></i>&nbsp; Location&nbsp;:&nbsp;{{c.location}}</p>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+

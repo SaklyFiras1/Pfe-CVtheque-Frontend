@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+.black-snackbar{
+background:black;
+color:white
+}
+.green-snackbar{
+background:green;
+color:white
+}
+
+

@@ -1,0 +1,9 @@
+.navbar-light {
+justify-content: space-evenly;
+justify-self: flex-end;
+position: relative;
+align-items: center;
+font-size: 19px;
+
+}
+

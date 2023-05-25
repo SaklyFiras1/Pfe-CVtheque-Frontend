@@ -1,0 +1,95 @@
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxFlex fxLayout="row">
+    <span class="title-center"> ADD A Job</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="Mat-tapography">
+  <form  [formGroup]="postjobform">
+    <div fxFlex fxLayout="column">
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Job Title</mat-label>
+        <input matInput formControlName="jobtitle"required />
+
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Job Categorie</mat-label>
+        <input matInput formControlName="jobcategorie"required />
+
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Nombre Postes</mat-label>
+        <input matInput formControlName="nombrepostes"required />
+
+      </mat-form-field>
+      <section >
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Job Type </mat-label>
+<mat-select formControlName="jobtype">
+
+
+        <mat-option  value="Full_Time">
+
+          Full_Time
+        </mat-option>
+        <mat-option value="Part_Time" >
+        Part_Time
+        </mat-option>
+        <mat-option value="freelance" >
+          freelance
+          </mat-option>
+          <mat-option value="internship" >
+            internship
+            </mat-option>
+
+            <mat-option  class="Full_Time"value="temporary" >
+              temporary
+              </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </section>
+
+
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> Job description </mat-label>
+      <textarea name="content"matInput formControlName="Descriptionj" placeholder="Textarea"></textarea>
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label>Requirements Of Job </mat-label>
+      <textarea matInput  formControlName="jobrequirement"placeholder="Textarea"></textarea>
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> Salary </mat-label>
+      <input matInput formControlName="salary" required />
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> Hours</mat-label>
+      <input matInput formControlName="hours"required />
+
+    </mat-form-field>
+
+  <mat-form-field appearance="fill" fxFlex>
+    <mat-label> Closingdate</mat-label>
+    <input matInput formControlName="closingdate"required />
+
+  </mat-form-field>
+
+
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    type="submit"
+    class="tool"
+  (click)="handlepost()"
+  [disabled]="!(postjobform.valid&&postjobform.dirty)"
+
+  >
+   Send Post Request
+  </button>
+  <button mat-raised-button mat-dialog-close class="tool"> Close</button>
+</mat-dialog-actions>

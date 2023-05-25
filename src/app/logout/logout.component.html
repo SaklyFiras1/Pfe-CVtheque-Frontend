@@ -1,0 +1,17 @@
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxFlex fxLayout="row">
+   <p>Do U want To Logout</p>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    type="submit"
+    class="tool"
+    (click)="lg()"
+
+  >
+    Yes
+  </button>
+  <a style="color:red;"  mat-raised-button mat-dialog-close >No</a>
+</mat-dialog-actions>

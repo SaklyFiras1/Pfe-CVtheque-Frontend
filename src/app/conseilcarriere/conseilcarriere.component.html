@@ -1,0 +1,82 @@
+
+
+<app-navbar1></app-navbar1>
+<div id="titlebar">
+  <div class="container">
+    <div class="ten columns">
+      <span></span>
+      <h2 style="color:rgb(34, 33, 33)">Search Candidats</h2>
+    </div>
+
+    <div class="six columns" *ngFor="let c of pk">
+      <a  *ngIf="c.usertype=='candidat'&&(c.badge=='Approved'||c.badge=='Expert')"(click)="postannoncecandidataction()"class="button" style="background-color: #9f41f7;">Post a search Job annonce</a>
+    </div>
+  </div>
+</div>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+  integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY="
+  crossorigin="anonymous"
+/>
+
+<div  class="list-search"style="margin :2px  400px 10px" >
+  <a>
+  <input [(ngModel)]="candida" style="border-radius: 9px;margin-top: 10px;margin-bottom:3px ;" padding="9px"  class="fa-brands fa-searchengin" type="text" placeholder="Find Candidats"  /></a>
+
+  <div class="clearfix"></div>
+</div>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+  integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY="
+  crossorigin="anonymous"
+/>
+
+<div class="row" >
+  <div class="col-lg-10 mx-auto">
+    <div class="career-search mb-60">
+      <div class="filter-result">
+        <div
+          class="job-box d-md-flex align-items-center justify-content-between mb-30"
+        *ngFor="let c of data|filter:candida">
+          <div class="job-left my-4 d-md-flex align-items-center flex-wrap" >
+            <div
+              class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
+            >
+            <img class="rounded-circle border-0 shadow" style="background-color: rgb(211, 208, 208);" src={{c.photourl}}>
+            </div>
+            <div class="job-content ">
+              <h1 class="text-center text-md-left"> {{c.username}} </h1>
+              <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                <li class="mr-md-4">
+                  <i class="zmdi zmdi-pin mr-2"></i>{{c.location}}
+                </li>
+                <li class="mr-md-4">
+                  <i class="fa-solid fa-magnifying-glass"></i>&nbsp;{{c.recherchedpost}}
+              </li>
+                <li class="mr-md-4">
+                  <i class="zmdi zmdi-time mr-2"></i>Poste Date:{{c.dateposte}}
+                </li>
+                <li class="mr-md-4">
+                  <i class="zmdi zmdi-time mr-2"></i> Expire Date :{{c.expiredate}}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job-right my-4 flex-shrink-0">
+            <a   href="/annoncecandidat/{{c.id_post}}"class="btn d-block w-100 d-sm-inline-block btn-light"
+              >View Candidat Annonce</a
+            >
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+</div>
+            <div class="margin-top-60"></div>
+
+

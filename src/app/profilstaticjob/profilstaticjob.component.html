@@ -1,0 +1,175 @@
+<app-navbar1></app-navbar1>
+<div id="titlebar" style="height: 100px;">
+	<div class="container">
+		<div class="row">
+
+			<h2 class="row">{{job.jobtitle}}({{job.jobcategorie}})<span *ngIf="job.jobtype=='Full_Time'"  style="height: 36px;padding: 6px;margin-top:5px ;width: 82px;"class="full-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='Part_Time'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="part-time">{{job. jobtype}}</span><span *ngIf="job.jobtype=='internship'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="internship">{{job. jobtype}}</span><span *ngIf="job.jobtype=='freelance'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="freelance">{{job. jobtype}}</span><span *ngIf="job.jobtype=='temporary'"  style="height: 36px;padding: 6px;margin-top:5px ;"class="temporary">{{job. jobtype}}</span><p  class="row"style="margin-left:28px ;transform: translateY(-7px);"><b> <i style="font-size: 42px;color:rgb(102, 207, 40);" class="fa-solid fa-door-open"></i></b> <p>{{job.nombrepostes}}&nbsp;Open Posts</p><img style="width: 57px;transform: translateY(-10.35px);filter:drop-shadow(9%);-webkit-filter: grayscale(9%);"src="https://cdn0.iconfinder.com/data/icons/airport-5/500/16-512.png"> <p >{{dta}}&nbsp;Candidats        </p>
+
+      </h2>
+		</div>
+
+
+
+	</div>
+</div>
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+
+	<!-- Recent Jobs -->
+	<div class="eleven columns">
+	<div class="padding-right">
+
+		<!-- Company Info -->
+
+		<div class="company-info" >
+			<img src="{{job.logourl}}" >
+			<div class="content">
+				<h4 style="font-size: 16px;"><b>{{job.companyname}}</b></h4>
+				<span><a href={{job.companyurl}}><i class="fa fa-link"></i> {{job.companyurl}}</a></span>
+        <span><a href={{job.phone}}><i class="fa fa-phone"></i> {{job.phone}}</a></span>
+        <span><a href={{job.companyemail}}><i class="fa fa-exclamation-circle"></i> {{job.companyemail}}</a></span>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+    <h4 style="font-size: 18px;"> <b>Job Description</b></h4>
+		<p class="margin-reset" style="font-size: 14px;">
+
+			{{job.Descriptionj}}
+		</p>
+
+		<br>
+
+
+		<br>
+
+		<h4 class="margin-bottom-10"  style="font-size: 18px;"> <b>Job Requirment</b></h4>
+
+		<ul class="list-1">
+			<p style="font-size:14px">{{job.jobrequirement}}</p>
+
+		</ul>
+<div style="margin-top: -190px;"></div>
+	</div>
+	</div>
+		<div class="float-right " style="margin-top: -300px;width:300px">
+
+
+			<div class="job-overview" style="margin-left:80px;margin-right:-80px;background-color: #ffffff;transform: translateY(24%);">
+
+				<ul>
+          <li>
+            <h4 style="margin-left: 58px; font-size: large;"><b >Overview</b></h4></li>
+					<li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-map-marker"> </i>
+						<div>
+              <span>
+							<strong>Location:</strong>
+						{{job.gouvernement}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8) "class="fa fa-user"></i>
+						<div>
+              <span>
+							<strong>Job Title:</strong>
+						{{job.jobtitle}}</span>
+						</div>
+					</li>
+          <li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-map-marker"> </i>
+						<div>
+              <span>
+							<strong>Job Categorie:</strong>
+							{{job.jobcategorie}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8)" class="fa fa-clock-o"></i>
+						<div>
+              <span>
+							<strong>Hours:</strong>
+						{{job.hours}}</span>
+						</div>
+					</li>
+					<li>
+						<i style="color:rgb(31, 202, 8)"  class="fa fa-money"></i>
+						<div>
+              <span>
+							<strong>Salary</strong>
+							{{job.salary}}</span>
+
+
+						</div>
+
+					</li>
+
+				</ul>
+
+
+
+
+
+			</div>
+      <div *ngFor="let n of data">
+        <button [hidden]="n.usertype=='company'||n.badge=='pending'" (click)="postulateconcour()" style="background-color:#e6d6f5 ;color:black;width: 130px;height:35px;border-radius: 9px;margin-left: 170px; padding-left:6px;padding: 6px;margin-top:80px;">Postulate Now</button>
+
+
+      </div>
+
+		</div>
+
+
+
+	</div>
+	<!-- Widgets / End -->
+  <div *ngFor="let n of data ">
+  <div class="container" [hidden]="n.usertype=='company'">
+    <div class="row bootstrap snippets bootdeys">
+        <div class="col-md-8 col-sm-12">
+            <div class="comment-wrapper">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Comment Panel
+                    </div>
+
+                    <form class="panel-body" [formGroup]="commentform">
+                        <textarea  [(ngModel)]="commentaire" class="form-control"  formControlName="commentaire" placeholder="write a comment..." rows="3"></textarea>
+                        <br>
+                        <button type="button"  style="background-color:#e6d6f5"  (click)="commsubmit()"class="btn btn pull-right">Post</button>
+                        <div class="clearfix"></div>
+                        <hr>
+                        <ul class="media-list" >
+                            <li class="media" *ngFor="let c of comment"  >
+                                <a href="#" class="pull-left">
+                                    <img src={{c.photourl}} alt="" class="img-circle">
+                                </a>
+                                <div class="media-body">
+
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted"></small>
+                                    </span>
+                                    <strong class="text-success" style="margin-left:7px;"> {{c.username}}</strong>
+                                    <p style="color:black;margin-left:7px;margin-top: 10px;">
+
+                                      {{c.commentaire}}
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                      </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+  </div>
+
+
+
+

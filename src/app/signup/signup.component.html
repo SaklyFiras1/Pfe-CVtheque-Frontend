@@ -1,0 +1,93 @@
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center"> Register</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="signupform">
+    <div fxFlex fxLayout="column">
+      <mat-form-field appearance="fill" required>
+        <mat-label> Username</mat-label>
+        <input matInput formControlName="username" required />
+        <mat-error
+          *ngIf="
+            signupform.controls.username.touched &&
+            signupform.controls.username.invalid
+          "
+        >
+          <span *ngIf="signupform.controls.username.errors.required">
+            Empty Enter
+          </span>
+
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Email</mat-label>
+        <input matInput formControlName="email" required />
+
+        <mat-error
+          *ngIf="
+            signupform.controls.email.touched &&
+            signupform.controls.email.invalid
+          "
+        >
+          <span *ngIf="signupform.controls.email.errors.required">
+            Empty Enter
+          </span>
+          <span *ngIf="signupform.controls.email.errors.pattern">
+            Invalid Enter
+          </span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required />
+        <mat-error
+          *ngIf="
+            signupform.controls.password.touched &&
+            signupform.controls.password.invalid
+          "
+        >
+          <span *ngIf="signupform.controls.password.errors.required">
+            Empty Enter</span
+          >
+          <span *ngIf="signupform.controls.password.errors.pattern">
+             Invalid Enter</span
+          ></mat-error
+        >
+      </mat-form-field>
+      <section >
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Choose your Role</mat-label>
+<mat-select formControlName="usertype">
+
+
+        <mat-option value="company">
+          company
+        </mat-option>
+        <mat-option value="candidat" >
+          candidat
+        </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  </section>
+
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+
+    mat-raised-button
+    class="tool"
+    type="submit"
+    (click)="handlesubmit()"
+    href="http://localhost:4200/addprofil"
+    [disabled]="!(signupform.valid && signupform.dirty)"
+    >
+SignUp
+  </button>
+  <button mat-raised-button mat-dialog-close class="tool">Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,89 @@
+<header>
+  <div class="container">
+    <div class="sixteen columns">
+      <!-- Logo -->
+      <div id="logo">
+        <h1 style="margin-left:-110px">
+          <a href="index.html"
+            ><img src="assets/images/logo.png" alt="work scout"
+          /></a>
+        </h1>
+      </div>
+
+      <!-- Menu -->
+      <nav id="navigation" class="menu" style="margin-left:110px">
+        <ul id="responsive" >
+          <li><a href="home">Home</a></li>
+
+          <li><a href="offreemploie">Job Offers</a></li>
+          <li><a href="CandidatsAnnonces">Candidats Annonces</a></li>
+          <li><a href="contactus">Contact Us</a></li>
+          <nav id="navigation" class="menu" style="margin-right: -20%;float: right;">
+
+            <li style="margin-top: 3.5px;" class="nav-item dropdown" >
+              <a class="nav-link text-light"  role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+              <i style="color: black;margin-top: 2px;" class="fa fa-bell"> <span class="badge rounded-circle" style="background-color: red;">{{count}}</span></i>
+
+              </a>
+              <ul class="dropdown-menu">
+              <li class="head text-light bg-gray">
+              <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+              <span style="font-size: 12px;">Notifications</span>
+
+              </div>
+              </div>
+              </li>
+        <li>
+              <cdk-virtual-scroll-viewport  itemSize="100" style="height: 300px;">
+
+              <li class="notification-box bg-black"  *ngFor="let c of data">
+
+                <div class="row">
+
+                <div class="col-lg-3 col-sm-3 col-3 text-center">
+
+                <img style="margin-left: 15px;max-width: 50px;"src={{c.photourl}} class="w-57 rounded">
+                </div>
+                <div class="col-lg-8 col-sm-8 col-8">
+                <strong  style="font-size: 10px; color: white;margin-left: -4px;"> {{c.message}}</strong>
+                <div>
+
+                </div>
+                <small class="text-warning"> {{c.date}}</small>
+                </div>
+                </div>
+
+                </li>
+              </cdk-virtual-scroll-viewport>
+            </li>
+
+              </ul>
+              </li>
+
+
+
+
+          <li>
+            <div  class="margin-left:100px;"*ngFor="let c of dat">
+           
+              <a [hidden]="c.photourl==null" id="titlebar"href="profil"><img  class="rounded-circle"style="width: 28px;height: 30px;  background-size: auto;transform: translateY(-20px);" src={{c.photourl}}>
+           </a>
+           
+              <a [hidden]="c.photourl!=null" id="titlebar"href="profil"><img  class="rounded-circle"style="width: 28px;height: 30px;  background-size: auto;transform: translateY(-20px);" src="https://cdn.iconscout.com/icon/free/png-256/business-avatar-man-settings-profile-account-person-19-544.png">
+              </a>
+          </div>
+          </li>
+          <li>
+            <a (click)="logoutaction()" class="btn head-btn2"
+              ><i class="fa-solid fa-arrow-right-from-bracket"></i
+              ><button class="sr-only" >Logout</button>
+            </a>
+          </li>
+        </nav>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</header>

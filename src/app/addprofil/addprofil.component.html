@@ -1,0 +1,106 @@
+<mat-toolbar class="tools" >
+  <mat-toolbar-row fxLayout="row" fxFlex>
+    <h1 class="title-center" > Update Profil </h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="Mat-tapography">
+  <form    [formGroup]="updateform">
+    <div fxFlex fxLayout="column" *ngFor="let c of userprofil" >
+    
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> username</mat-label>
+      <input matInput  formControlName="username"[(ngModel)]="c.username"  required />
+  
+    </mat-form-field>
+  
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Professional Title </mat-label>
+        <input matInput   formControlName="titreprofessionelle" [(ngModel)]="c.titreprofessionelle" required  />
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label> Adress</mat-label>
+        <input matInput   formControlName="location" required [(ngModel)]="c.location" />
+
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Diplomes </mat-label>
+        <input matInput   formControlName="diplomes"[(ngModel)]="c.diplomes"  required />
+
+      </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> Languages </mat-label>
+      <input matInput formControlName="langues"[(ngModel)]="c.langues"  required  />
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label>Phone </mat-label>
+      <input matInput  formControlName="numerodetelephone"[(ngModel)]="c.numerodetelephone"  required  />
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> skills</mat-label>
+      <input matInput formControlName="skills" [(ngModel)]="c.skills"  required />
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> university</mat-label>
+      <input matInput  formControlName="university" [(ngModel)]="c.university"  required />
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" fxFlex>
+      <mat-label> Birth Date</mat-label>
+      <input matInput  formControlName="datedenaissance" [(ngModel)]="c.datedenaissance"  required />
+
+    </mat-form-field>
+  <mat-form-field appearance="fill" fxFlex>
+    <mat-label> niveauetudes</mat-label>
+    <input matInput  formControlName="niveauetude"[(ngModel)]="c.niveauetude"  required />
+
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" fxFlex>
+    <mat-label> Certificats</mat-label>
+    <input matInput  formControlName="certificats" [(ngModel)]="c.certificats"  required>
+
+  </mat-form-field>
+
+<mat-form-field appearance="fill" fxFlex>
+  <mat-label> a propos de mois</mat-label>
+  <textarea matInput   formControlName="aproposdemoi" [(ngModel)]="c.aproposdemoi"  required></textarea>
+
+</mat-form-field>
+<mat-form-field appearance="fill" fxFlex>
+  <mat-label> detaille experience</mat-label>
+  <textarea matInput formControlName="detailleexperience" [(ngModel)]="c.detailleexperience"   required ></textarea>
+
+</mat-form-field>
+<input id="input-file"  (change)="onFileSelec($event)" accept="application/pdf"   formControlName="pdfcv" required  type="file"   />
+<label  for="input-file">   <i class="fa-solid fa-upload"></i> Choose your cv(.pdf*) :&nbsp;{{filename}}</label>
+<mat-form-field appearance="fill" fxFlex>
+  <mat-label> Linkedin</mat-label>
+  <textarea matInput formControlName="linkedin" [(ngModel)]="c.linkedin"   required></textarea>
+
+</mat-form-field>
+    </div>
+  </form>
+  </mat-dialog-content>
+
+
+
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    type="submit"
+
+   (click)="handlepost()"
+   [disabled]="!(updateform.valid && updateform.dirty)"
+
+  >
+   Update Profil
+</button>
+  <a mat-raised-button mat-dialog-close   style="color:  rgba(255, 0, 0, 0.904)" > Close</a>
+</mat-dialog-actions>

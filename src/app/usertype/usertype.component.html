@@ -1,0 +1,45 @@
+
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxFlex fxLayout="row">
+    <span class="title-center"> Change user type</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="Mat-tapography">
+
+<form  [formGroup]="usertypeform">
+<div>
+  <section >
+    <mat-form-field appearance="outline" fxFlex>
+      <mat-label>Change your Role</mat-label>
+<mat-select formControlName="usertype">
+
+
+    <mat-option value="company">
+      company
+    </mat-option>
+    <mat-option value="candidat" >
+      candidat
+    </mat-option>
+
+</mat-select>
+</mat-form-field>
+</section>
+
+</div>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+  mat-raised-button
+  type="submit"
+  class="tool"
+  [disabled]="!(usertypeform.valid && usertypeform.dirty)"
+ (click)="handlesubmit()"
+>
+  <i class="fa fa-save"></i>
+  Save
+</button>
+<button mat-raised-button mat-dialog-close class="tool">Close</button>
+</mat-dialog-actions>
+

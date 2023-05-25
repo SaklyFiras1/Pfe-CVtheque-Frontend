@@ -1,0 +1,79 @@
+
+
+
+<mat-toolbar class="tool">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center"> Post A Search Job Annonce</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="postcanform">
+    <div fxFlex fxLayout="column">
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Recherched Poste</mat-label>
+        <input matInput formControlName="recherchedpost" required />
+
+
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" required ></textarea>
+
+
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Salary</mat-label>
+        <input matInput formControlName="salary" required >
+
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Hours</mat-label>
+        <input matInput formControlName="hours" required />
+
+
+      </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Expire Date</mat-label>
+            <input matInput formControlName="expiredate" required >
+
+
+          </mat-form-field>
+
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+
+    mat-raised-button
+    class="tool"
+    type="submit"
+
+ (click)="handlesubmit()"
+ [disabled]="!(postcanform.valid && postcanform.dirty)"
+
+    >
+Post Annonce
+  </button>
+  <button mat-raised-button mat-dialog-close style="background-color:#f74141;; color: white;">Close</button>
+</mat-dialog-actions>
